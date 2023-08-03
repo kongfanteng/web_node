@@ -8,3 +8,5 @@ nodejs 入门目标
 - 能够使用 fs 模块读写操作文件
 - 能够使用 path 模块处理路径
 - 能够使用 http 模块写一个基本的 web 服务器
+
+[github 地址](https://github.com/kongfanteng/web_node)
