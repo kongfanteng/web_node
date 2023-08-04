@@ -1,0 +1,14 @@
+{
+  "name": "kft-tools",
+  "version": "1.0.0",
+  "description": "提供了格式化时间，HTMLEscape 的功能",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "kft",
+    "dateFormat",
+    "escape"
+  ],
+  "author": "KFT",
+  "license": "ISC"
+}
