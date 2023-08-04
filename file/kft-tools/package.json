@@ -1,6 +1,6 @@
 {
   "name": "kft-tools",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "提供了格式化时间，HTMLEscape 的功能",
   "main": "index.js",
   "scripts": {},
