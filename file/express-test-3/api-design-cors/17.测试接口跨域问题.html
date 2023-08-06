@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17.测试接口跨域问题.html</title>
+</head>
+<body>
+  <button type="button" id="btnGET">btnGET</button>
+  <button type="button" id="btnPOST">btnPOST</button>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  <script>
+    $('#btnGET').on('click', function(){
+      $.ajax({
+        type: 'GET',
+        url: 'http://127.0.0.1/api/get',
+        data: { name: 'zs', age: 20 },
+        success: function(res){
+          console.log('resGET:', res)
+        }
+      })
+    })
+    $('#btnPOST').on('click', function(){
+      $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1/api/post',
+        data: { bookname: '水浒传', author: '施耐庵' },
+        success: function(res){
+          console.log('resPOST:', res)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
