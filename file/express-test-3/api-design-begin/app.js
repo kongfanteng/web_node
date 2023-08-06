@@ -2,6 +2,7 @@
 const express = require('express')
 // - - 创建 express 服务器实例，命名 app
 const app = express()
+app.use(express.urlencoded({ extended: false }))
 
 // - - - app.use, '/api', apiRouter
 // 导入并注册路由模块
