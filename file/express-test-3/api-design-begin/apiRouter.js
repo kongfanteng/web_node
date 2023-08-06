@@ -29,5 +29,13 @@ apiRouter.post('/post', (req, res) => {
   })
 })
 
+// - - - 定义 DELETE 接口，router.delete, /delete, 返回对象：status，msg, 'DELETE 请求成功'
+apiRouter.delete('/delete', (req, res) => {
+  res.send({
+    status: 0,
+    msg: 'DELETE 请求成功',
+  })
+})
+
 // - - - module.exports 导出 apiRouter
 module.exports = apiRouter

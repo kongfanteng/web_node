@@ -8,8 +8,20 @@
 <body>
   <button type="button" id="btnGET">btnGET</button>
   <button type="button" id="btnPOST">btnPOST</button>
+  <button id="btnDelete">btnDELETE</button>
   <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
   <script>
+    // - - - button#btnDelete{DELETE}
+    // - - - 为删除按钮绑定点击事件处理函数 $('#btnDelete'), click, $.ajax, 打印 res
+    $('#btnDelete').on('click', function() {
+      $.ajax({
+        type: 'DELETE',
+        url: 'http://127.0.0.1/api/delete',
+        success: function(res){
+          console.log('resDELETE:', res)
+        }
+      })
+    })
     $('#btnGET').on('click', function(){
       $.ajax({
         type: 'GET',
