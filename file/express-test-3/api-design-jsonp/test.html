@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17.测试接口跨域问题.html</title>
+</head>
+<body>
+  <button type="button" id="btnJSONP">btnJSONP</button>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  <script>
+    // - - 调用 $.ajax() 函数，提供 JSONP 的配置选项，从而发起 JSONP 请求，示例代码如下
+    // - - - #btnJSONP, click, $.ajax(), method, url, dataType, success, 打印 res
+    $('#btnJSONP').on('click', function(){
+      $.ajax({
+        type: 'GET',
+        url: 'http://127.0.0.1/api/jsonp',
+        dataType: 'jsonp',
+        success: function(res){
+          console.log('resJSONP:', res)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
