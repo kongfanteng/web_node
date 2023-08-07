@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+    Login Page
+    <button type="button" id="login">LOGIN</button>
+    <script>
+      $('#login').on('click', () => {
+        $.ajax({
+          url: 'http://127.0.0.1/api/login',
+          method: 'POST',
+          data: { username: 'admin', password: '000000' },
+          success: function (res) {
+            alert(JSON.stringify(res))
+            window.location.href = './index.html'
+          },
+        })
+      })
+    </script>
+  </body>
+</html>

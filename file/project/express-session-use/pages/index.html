@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+    <h1>Main Page</h1>
+    <p>Username：<span id="username"></span></p>
+    <button type="button" id="loginout">LOGINOUT</button>
+    <script>
+      $.ajax({
+        url: 'http://127.0.0.1/api/username',
+        method: 'GET',
+        success: function (res) {
+          const { status = 0, msg, username } = res;
+          if (status === 1) {
+            alert(msg)
+            window.location.href = './login.html'
+            return
+          } 
+          $('#username').html(username)
+        },
+      })
+      $('#loginout').on('click', () => {
+        $.ajax({
+          url: 'http://127.0.0.1/api/loginout',
+          method: 'POST',
+          success: function (res) {
+            const { status = 0, msg } = res;
+            if (status === 1) {
+              alert(msg)
+              return
+            } 
+            window.location.href = './login.html'
+          },
+        })
+      })
+    </script>
+</body>
+</html>
