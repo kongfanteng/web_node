@@ -88,3 +88,5 @@ function insert_quick(user) {
     } // 成功
   })
 }
+const user = { username: 'aaa', password: '123456' }
+    insert_quick(user)
