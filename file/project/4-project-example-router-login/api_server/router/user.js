@@ -11,6 +11,6 @@ const { reg_login_schema } = require('../schema/user')
 // - - - 注册新用户接口-/reguser，第二个参数填入 expressJoi.joiValidate(reg_login_schema)
 
 // - - - 注册和登录接口中函数替换
-router.post('/reguser', expressJoi.joiValidate(reg_login_schema), userHandler.regUser)
-router.post('/login', expressJoi.joiValidate(reg_login_schema), userHandler.login)
+router.post('/reguser', expressJoi.joiValidate(reg_login_schema, { strict: false }), userHandler.regUser)
+router.post('/login', expressJoi.joiValidate(reg_login_schema, { strict: false }), userHandler.login)
 module.exports = router

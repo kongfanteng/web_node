@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const config = require('./config')
 
 // - 2、配置 cors 跨域，配置表单数据中间件
 // - - 2）在 app.js 中导入并配置 cors 中间件
@@ -31,15 +32,20 @@ app.use(function(req, res, next) {
   next()
 })
 
+// - - - 导入 express-jwt 包，解析 token 中间件，命名 expressJWT
+const expressJWT = require('express-jwt')
+// - - - 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 token 身份认证
+app.use( expressJWT({ secret: config.jwtSecretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\//] }))
+
 // - 2、在 app.js 中，导入并使用用户路由模块，命名 userRouter
 const userRouter = require('./router/user')
-app.use(userRouter)
+app.use('/api', userRouter)
 
 // - - - - 引入 @hapi/joi，命名 joi
 const joi = require('@hapi/joi')
 // - - - - 错误中间件
 app.use((err, req, res, next) => {
-  console.log('err:', err)
+  if (err.name === 'UnauthorizedError') return res.cc('身份认证失败！')
   if (err instanceof joi.ValidatationError) return res.cc(err)
   res.cc(err)
 })
