@@ -7,14 +7,15 @@ const app = express()
 // - - - 导入 cors 中间件，命名 cors; 将 cors 注册为全局中间件，调用 app.use()
 const cors = require('cors')
 app.use(cors())
-
-// - 2、在 app.js 中，导入并使用用户路由模块，命名 userRouter
-const userRouter = require('./router/user')
-app.use(userRouter)
+app.use(express.json())
 
 // - 3、配置解析表单数据的中间件
 // - - 1）通过如下的代码，配置解析 application/x-www-form-urlencoded 格式的表单数据的中间件：
 app.use(express.urlencoded({ extended: false }))
+
+// - 2、在 app.js 中，导入并使用用户路由模块，命名 userRouter
+const userRouter = require('./router/user')
+app.use(userRouter)
 
 // write your code here
 app.listen(3007, () => {
