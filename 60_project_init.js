@@ -8,7 +8,7 @@
     npm init -y
     // - - 2）运行如下命令，安装特定版本的 express
     npm i express@4.17.1
-    // - - 3）在项目根目录中新建 app.js 作为整个项目的入口文件，并初始化如下代码: {@link file://./file/project-example/api_server/app.js}
+    // - - 3）在项目根目录中新建 app.js 作为整个项目的入口文件，并初始化如下代码: {@link file://./file/project/1-project-example-init/api_server/app.js}
     // - - - 导入 express，命名 express; 创建 express 实例，命名 app; 调用 app.listen()，指定端口号 3007 并启动服务器
     const express = require('express')
     const app = express()
