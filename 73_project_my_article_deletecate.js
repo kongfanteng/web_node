@@ -69,8 +69,7 @@
       // 删除文章分类成功
       return res.cc('删除文章分类成功！', 0)
     })
-
-    11-project-example-my-article-deletecate
+    
  * ```
  *
  */
