@@ -64,7 +64,7 @@
     // - - 3）查询分类名称与别名是否被占用
     // - - - {@link file://./file/project/13-project-example-my-article-updatecate/api_server/router/router_handler/artcate.js}
     // - - - 定义查重的 SQL 语句，命名 sql
-    const sql = 'select * from ev_article where id<>? and (name=? or alias=?)'
+    const sql = 'select * from ev_articles where id<>? and (name=? or alias=?)'
     // - - - 执行 SQL 语句查重，调用 db.query, 参数 sql, [req.user.id, req.body.name, req.body.alias]
     db.query(sql, [req.user.id, req.body.name, req.body.alias], (err, results) => {
       // - - - - 执行 SQL 语句失败
