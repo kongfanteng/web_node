@@ -14,7 +14,7 @@
     Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwidXNlcm5hbWUiOiJsczIiLCJwYXNzd29yZCI6IiIsIm5pY2tuYW1lIjoieGlhb2xpMiIsImVtYWlsIjoieGlhb2xpMkAxNjMuY29tIiwidXNlcl9waWMiOiIiLCJpYXQiOjE2OTE2MjIyMzAsImV4cCI6MTY5MTY1ODIzMH0.CL-n2nWShUxRWNCIAP0vjHreEqEncz7UX4s0q34MFeI
     // - - URL 参数：
     // - - - 参数名    | 必选  | 类型    |    说明
-    // - - - id       | 是    | string |    分类的分类 id，注意：这是一个 URL 参数
+    // - - - id       | 是    | string |    分类 id，注意：这是一个 URL 参数
     // - - 返回示例
     {
       "status": 0,
@@ -30,7 +30,7 @@
     // - 2、实现步骤
     // - - 1）定义路由和处理函数
     // - - 2）验证表单数据
-    // - - 4）实现获取文章分类的功能
+    // - - 3）实现获取文章分类的功能
 
     // - 3、具体实现
     // - - 1）定义路由和处理函数
