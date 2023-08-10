@@ -66,7 +66,7 @@
     // - - 3）实现重置密码的功能
     // - - -（1）根据 id 查询用户是否存在
     // - - - - {@link file://./file/project/7-project-example-my-updatepwd/api_server/router/router_handler/userinfo.js}
-    // - - - - 定义根据 id 查询用户数据额 SQL 语句，命名 sql
+    // - - - - 定义根据 id 查询用户数据的 SQL 语句，命名 sql
     const sql = 'select * from ev_users where id=?'
     // - - - - 执行 SQL 语句查询用户是否存在，调用 db.query, 参数 sql req.user.id
     db.query(sql, req.user.id, (err, results) => {
